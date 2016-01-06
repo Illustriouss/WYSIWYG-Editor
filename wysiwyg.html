@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+	<head>
+		<title>wysiwyg test</title>
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+		<style>
+			form {
+			
+				overflow: auto;
+				height: auto;
+			
+			}
+			.buttons {
+				
+				margin-bottom: 5px;
+				overflow: auto;
+				height: auto;
+				padding: 5px;
+				
+			}
+			.buttons input, button {
+
+				border: 0;
+				background: #E0E0E0;
+				padding: 5px;
+				font-size: 15px;
+				line-height: 16px;
+				float: left;
+				margin: 0 2px;
+				color: #575757;
+				
+			}
+			.buttons input:hover, button:hover {
+
+				color: black;
+				
+			}
+			.buttons input:focus, button:focus {
+					
+				outline: 0;
+				
+			}
+			.buttons input:active, button:active {
+			
+				background: #C4C4C4;				
+			
+			}
+			iframe {
+			
+				border: 1px solid black;
+				clear: both;
+			
+			}
+			img {
+				
+				resize: both;
+			
+			}
+		</style>
+	</head>
+	<body onLoad="iFrameOn();">
+		<form action="" method="post">
+			<div class="buttons">
+				<button type="button" onclick="makeBold()" class="fa fa-bold"></button>
+				<button type="button" onclick="makeItalic()" class="fa fa-italic"></button>
+				<button type="button" onclick="justifyLeft()" class="fa fa-align-left"></button>
+				<button type="button" onclick="justifyCenter()" class="fa fa-align-center"></button>
+				<button type="button" onclick="justifyRight()" class="fa fa-align-right"></button>
+				<button type="button" onclick="justifyFull()" class="fa fa-align-justify"></button>
+				<button type="button" onclick="changeFont()" class="fa fa-font"></button>
+				<button type="button" onclick="changeFontSize()" class="fa fa-text-height"></button>
+				<button type="button" onclick="makeOl()" class="fa fa-list-ol"></button>
+				<button type="button" onclick="makeUl()" class="fa fa-list-ul"></button>
+				<button type="button" onclick="strikeThrough()" class="fa fa-strikethrough"></button>
+				<button type="button" onclick="makeSubScript()" class="fa fa-subscript"></button>
+				<button type="button" onclick="makeSuperScript()" class="fa fa-superscript"></button>
+				<button type="button" onclick="makeUnderLine()" class="fa fa-underline"></button>
+				<button type="button" onclick="createImage()" class="fa fa-file-image-o"></button>
+				<button type="button" onclick="createLink()" class="fa fa-link"></button>
+			</div>
+			<div></div>
+			<iframe name="iframe" width="700" height="300" style="resize: both;"></iframe>
+		</form>	
+	</body>
+</html>
+<script>
+	function iFrameOn() {
+	
+		iframe.document.designMode = 'On';
+	
+	};
+	function makeBold() {
+
+		iframe.document.execCommand('Bold', false, null);
+
+	}
+	function makeItalic() {
+	
+		iframe.document.execCommand('Italic', false, null);
+	
+	}
+	function justifyLeft() {
+
+		iframe.document.execCommand('justifyLeft', false, null);	
+
+	}
+	function justifyCenter() {
+	
+		iframe.document.execCommand('justifyCenter', false, null);
+	
+	}
+	function justifyRight() {
+		
+		iframe.document.execCommand('justifyRight', false, null);
+
+	}
+	function justifyFull() {
+	
+		iframe.document.execCommand('justifyFull', false, null);
+	
+	}
+	function changeFont() {
+
+		var font = prompt("font");
+		if (font != ""){
+			iframe.document.execCommand('fontName', false, font);
+		}
+		
+	}
+	// Doesn't work
+	function changeFontSize() {
+
+		var fontSize = prompt("font size");
+		if (fontSize != "") {
+			iframe.document.execCommand('fontSize', false, null);
+		}
+	
+	}
+	function makeOl() {
+	
+		iframe.document.execCommand('insertOrderedList', false, null);
+	
+	}
+	function makeUl() {
+	
+		iframe.document.execCommand('insertUnorderedList', false, null);
+	
+	}
+	function strikeThrough() {
+	
+		iframe.document.execCommand('strikeThrough', false, null);
+	
+	}
+	function makeSubScript() {
+	
+		iframe.document.execCommand('subscript', false, null);
+	
+	}
+	function makeSuperScript() {
+	
+		iframe.document.execCommand('superscript', false, null);
+	
+	}
+	function makeUnderLine() {
+	
+		iframe.document.execCommand('underline', false, null);
+	
+	}
+	function createImage() {
+	
+		var image = prompt("image");
+		if (image != "") {
+			iframe.document.execCommand('insertImage', false, image);
+		}
+	
+	} 
+	function createLink() {
+
+		var link = prompt("link");
+		if (link != "") {
+			iframe.document.execCommand('CreateLink', false, link);
+		}
+
+	}
+</script>
