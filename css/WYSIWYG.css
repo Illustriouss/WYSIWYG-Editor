@@ -1,0 +1,52 @@
+form {
+
+	overflow: auto;
+	height: auto;
+
+}
+.buttons {
+	
+	margin-bottom: 5px;
+	overflow: auto;
+	height: auto;
+	padding: 5px;
+	
+}
+.buttons input, button {
+
+	border: 0;
+	background: #E0E0E0;
+	padding: 5px;
+	font-size: 15px;
+	line-height: 16px;
+	float: left;
+	margin: 0 2px;
+	color: #575757;
+	
+}
+.buttons input:hover, button:hover {
+
+	color: black;
+	
+}
+.buttons input:focus, button:focus {
+
+	outline: 0;
+	
+}
+.buttons input:active, button:active {
+
+	background: #C4C4C4;				
+
+}
+iframe {
+
+	border: 1px solid black;
+	clear: both;
+
+}
+img {
+	
+	resize: both;
+
+}
