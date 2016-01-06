@@ -1,1 +1,2 @@
 # WYSIWYG-Editor
+We are going to make a "What You See Is What You Get" (WYSIWYG) text and image editor. We are doing this for fun, but also to improve on our programming skills. We are making use of HTML, CSS, PHP and JavaScript and we will try to make it as versatile and as easy to implement as possible, so end-users with only basic knowledge of used programming languages will be able to add this WYSIWYG-Editor without much of a hussle and more advanced users will be able to customize it to their likings.
