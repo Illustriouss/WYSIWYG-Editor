@@ -50,3 +50,9 @@ img {
 	resize: both;
 
 }
+#submit-form-button {
+	clear: both;
+}
+textarea {
+	display: none;
+}

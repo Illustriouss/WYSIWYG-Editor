@@ -96,3 +96,34 @@ function createLink() {
 	}
 
 }
+function submitForm() {
+
+	// Get iframe data
+	// Parse iframe data: replace ">, <" with "&gt, &lt"
+	// Copy parsed iframe data into textarea
+	// Send form
+
+	// Get iframe data
+	var iframe = document.getElementsByName('iframe')[0];
+
+	var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+	var iframeContent;
+
+	if (iframeDocument) {
+
+		iframeContent = iframeDocument.getElementsByTagName('body')[0];
+
+	}
+
+	// Parse iframe data
+	for (var i = 0; i < iframeContent.length; i++) {
+
+		var content = iframeContent[i].innerHTML;
+		var parsedContent = content.replace(/</g, '&lt').replace(/>/g, '&gt');
+		iframeContent[i].innerHTML = parsedContent;
+
+	}
+
+	// console.log(iframeContent); For testing purposes
+
+}

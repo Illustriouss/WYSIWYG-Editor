@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 	<head>
 		<title>wysiwyg test</title>
@@ -5,7 +8,7 @@
 		<link rel="stylesheet" href="css/WYSIWYG.css"/>
 	</head>
 	<body onLoad="iFrameOn();">
-		<form action="" method="post">
+		<form action="" method="post" id="form">
 			<div class="buttons">
 				<button type="button" onclick="makeBold()" class="fa fa-bold"></button>
 				<button type="button" onclick="makeItalic()" class="fa fa-italic"></button>
@@ -24,9 +27,11 @@
 				<button type="button" onclick="createImage()" class="fa fa-file-image-o"></button>
 				<button type="button" onclick="createLink()" class="fa fa-link"></button>
 			</div>
-			<div></div>
 			<iframe name="iframe" width="700" height="300" style="resize: both;"></iframe>
-		</form>	
+			<textarea id="dump-field"></textarea>
+			<button type="button" id="submit-form-button" onclick="submitForm()">Submit</button>
+		</form>
+		<div id="test"></div>
 	</body>
 	<script src="js/WYSIWYG.js"></script>
 </html>
