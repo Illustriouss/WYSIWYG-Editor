@@ -99,31 +99,23 @@ function createLink() {
 function submitForm() {
 
 	// Get iframe data
-	// Parse iframe data: replace ">, <" with "&gt, &lt"
-	// Copy parsed iframe data into textarea
-	// Send form
+	var iframe = document.getElementById('WYS-form');
+	var dumpField = document.getElementById('WYS-dump-field');
+	var form = document.getElementById('WYS-form');
 
-	// Get iframe data
-	var iframe = document.getElementsByName('iframe')[0];
-
-	var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+	var iframeDocument = iframe.contentDocument || iframe.contentWindow;
 	var iframeContent;
 
 	if (iframeDocument) {
 
-		iframeContent = iframeDocument.getElementsByTagName('body')[0];
+		iframeContent = iframeDocument.body.innerHTML;
 
 	}
 
-	// Parse iframe data
-	for (var i = 0; i < iframeContent.length; i++) {
+	// Load iframe data into textarea
+	dumpField.value = iframeContent;
 
-		var content = iframeContent[i].innerHTML;
-		var parsedContent = content.replace(/</g, '&lt').replace(/>/g, '&gt');
-		iframeContent[i].innerHTML = parsedContent;
-
-	}
-
-	// console.log(iframeContent); For testing purposes
+	// Send form
+	form.submit();
 
 }

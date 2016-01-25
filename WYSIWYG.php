@@ -1,5 +1,15 @@
 <?php
 
+	// Declare variables
+	$iframeContents;
+
+	if (isset($_POST['WYS-submit'])) {
+
+		// Get iframeContents
+		$iframeContents = (isset($_POST['WYS-dump-field']) ? $_POST['WYS-dump-field'] : NULL);
+
+	}
+
 ?>
 <!DOCTYPE html>
 	<head>
@@ -8,7 +18,7 @@
 		<link rel="stylesheet" href="css/WYSIWYG.css"/>
 	</head>
 	<body onLoad="iFrameOn();">
-		<form action="" method="post" id="form">
+		<form action="" method="post" id="WYS-form" onsubmit="submitForm()">
 			<div class="buttons">
 				<button type="button" onclick="makeBold()" class="fa fa-bold"></button>
 				<button type="button" onclick="makeItalic()" class="fa fa-italic"></button>
@@ -28,10 +38,9 @@
 				<button type="button" onclick="createLink()" class="fa fa-link"></button>
 			</div>
 			<iframe name="iframe" width="700" height="300" style="resize: both;"></iframe>
-			<textarea id="dump-field"></textarea>
-			<button type="button" id="submit-form-button" onclick="submitForm()">Submit</button>
+			<textarea id="WYS-dump-field" name="WYS-dump-field"></textarea>
+			<input type="submit" name="WYS-submit" value="Submit" />
 		</form>
-		<div id="test"></div>
 	</body>
 	<script src="js/WYSIWYG.js"></script>
 </html>
