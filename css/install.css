@@ -1,0 +1,43 @@
+/* intall.css */
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #519CED;
+}
+h1 {
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	margin-top: 30px;
+	color: white;
+	font-family: 'Lato';
+	font-weight: 300;
+	border-bottom: 1px solid white;
+}
+h2 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-family: 'Lato';
+	font-weight: 300;
+	color: white;
+}
+p {
+	font-family: 'Lato';
+	color: white;
+}
+.wrapper {
+	width: 900px;
+	margin: 0px auto;
+	margin-top: 50px;
+}
+.option-group {
+	width: calc(100% - 50px);
+	padding-left: 50px;
+}
+.option {
+	color: white;
+	font-family: 'Lato';
+}
